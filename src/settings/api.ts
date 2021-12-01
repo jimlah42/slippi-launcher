@@ -7,6 +7,8 @@ import {
   ipc_editConnection,
   ipc_openSettingsModalEvent,
   ipc_setAutoUpdateLauncher,
+  ipc_setBetaNetplay,
+  ipc_setBetaPlayback,
   ipc_setExtraSlpPaths,
   ipc_setIsoPath,
   ipc_setLaunchMeleeOnPlay,
@@ -61,6 +63,12 @@ export default {
   },
   async setAutoUpdateLauncher(autoUpdateLauncher: boolean): Promise<void> {
     await ipc_setAutoUpdateLauncher.renderer!.trigger({ autoUpdateLauncher });
+  },
+  async setBetaNetplayDolphin(installBeta: boolean): Promise<void> {
+    await ipc_setBetaNetplay.renderer!.trigger({ installBeta });
+  },
+  async setBetaPlaybackDolphin(installBeta: boolean): Promise<void> {
+    await ipc_setBetaPlayback.renderer!.trigger({ installBeta });
   },
   async addNewConnection(connection: Omit<StoredConnection, "id">): Promise<void> {
     await ipc_addNewConnection.renderer!.trigger({ connection });
