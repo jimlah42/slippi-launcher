@@ -23,5 +23,7 @@ export const defaultAppSettings: AppSettings = {
     playbackDolphinPath: path.join(app.getPath("userData"), "playback"),
     launchMeleeOnPlay: true,
     autoUpdateLauncher: true,
+    betaNetplay: false,
+    betaPlayback: false,
   },
 };
