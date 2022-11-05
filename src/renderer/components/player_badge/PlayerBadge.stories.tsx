@@ -20,10 +20,22 @@ export const ConnectCodeVariant = () => {
   return generateBadge({ variant: "code", text: "ABC#123" });
 };
 
-export const CharacterBadges = () => {
+export const WinnerVariant = () => {
+  return generateBadge({ variant: "code", text: "ABC#123", isWinner: true });
+};
+
+export const AllCharacterBadges = () => {
   const badges: React.ReactNode[] = [];
   for (let i = 0; i <= 25; i++) {
     badges.push(<div key={i}>{generateBadgeRow({ characterId: i })}</div>);
+  }
+  return <div>{badges}</div>;
+};
+
+export const AllCharacterBadgesWithWinner = () => {
+  const badges: React.ReactNode[] = [];
+  for (let i = 0; i <= 25; i++) {
+    badges.push(<div key={i}>{generateBadgeRow({ characterId: i, isWinner: true })}</div>);
   }
   return <div>{badges}</div>;
 };
